@@ -36,17 +36,33 @@
 	position: relative;
 	transition: all 0.5s;
 	padding: 12px 20px;
+	text-decoration: none;
+
+	&:after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 0%;
+		content: '.';
+		color: transparent;
+		background: #6a6a6a;
+		height: 1px;
+	}
+
+	&:hover {
+		font-weight: bold;
+
+		&:after {
+			width: 80%;
+		}
+	}
 }
 
-.nav__item:hover {
-	font-weight: bold;
-}
-
-.center {
-	min-height: 600px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.nav__item,
+.nav__item:after {
+	transition: all .5s;
 }
 
 .nav__menu_bar {
@@ -98,11 +114,22 @@
 
 		background-color: #ffffff1c;
 		z-index: 999;
-		padding: 20px 50px;
+		padding: 20px 50px 20px 40px;
 		backdrop-filter: blur(5px);
 	}
 
 	.nav__item {
-		padding: 0;
+		padding: 0 0 6px 11px;
+
+		&:after {
+			height: 2px;
+			background-color: #cbcbcb;
+		}
+
+		&:hover {
+			&:after {
+				width: 100%;
+			}
+		}
 	}
 }
